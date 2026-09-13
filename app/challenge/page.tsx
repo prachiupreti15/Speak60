@@ -171,7 +171,7 @@ export default function ChallengePage() {
   }
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center max-w-4xl mx-auto w-full px-6 py-12 bg-[#F4E4BC]">
+    <div className="flex-1 flex flex-col justify-center items-center max-w-4xl mx-auto w-full px-6 py-12 bg-[#FAF6EE]">
       {step === 'TOPIC' && topic && (
         <div className="w-full flex flex-col items-center">
           <TopicCard category={topic.category} topic={topic.text} />
