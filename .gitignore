@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Next.js Build Artifacts
+.next/
+out/
+build/
+
+# Private API Keys (CRITICAL)
+.env
+.env*.local
+
+# System Files
+.DS_Store
+Thumbs.db
