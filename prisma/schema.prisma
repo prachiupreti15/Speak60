@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Attempt {
+  id                       String   @id @default(cuid())
+  topic                    String
+  transcript               String?
+  duration                 Float?
+  wordCount                Int?
+  wordsPerMinute           Float?
+  fillerWords              Int?
+  overallScore             Int?
+  contentScore             Int?
+  fluencyScore             Int?
+  vocabularyScore          Int?
+  structureScore            Int?
+  deliveryConfidenceScore  Int?
+  strengths                Json?
+  improvements             Json?
+  createdAt                DateTime @default(now())
+}
