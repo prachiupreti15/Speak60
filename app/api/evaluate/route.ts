@@ -1,3 +1,7 @@
+console.log(
+  "GEMINI KEY EXISTS:",
+  !!process.env.GEMINI_API_KEY
+);
 import { NextRequest, NextResponse } from 'next/server';
 import { evaluateSpeech } from '@/lib/evaluation';
 import { prisma } from '@/lib/prisma';
@@ -6,6 +10,7 @@ export async function POST(req: NextRequest) {
   try {
     const { topic, transcript, duration } = await req.json();
     const evaluation = await evaluateSpeech(topic, transcript, duration);
+    console.log("FINAL EVALUATION:", evaluation);
 
     try {
       await prisma.attempt.create({
